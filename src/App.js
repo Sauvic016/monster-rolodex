@@ -10,10 +10,11 @@ class App extends Component {
 			searchField: "",
 		};
 	}
+	//  gets the Api data
 	componentDidMount() {
 		fetch("https://jsonplaceholder.typicode.com/users")
-			.then((response) => response.json())
-			.then((user) => this.setState({ monsters: user }));
+			.then((response) => response.json()) //we get the promise and convert it into json format using .json method then it will be returned as new promise
+			.then((user) => this.setState({ monsters: user })); // again using the .then method we get the promise or the array that we got from it and we set monsters to the array.
 	}
 	onSearchChange = (event) => {
 		this.setState({ searchField: event.target.value });
